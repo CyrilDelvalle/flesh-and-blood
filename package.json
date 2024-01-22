@@ -11,6 +11,7 @@
   "dependencies": {
     "@flesh-and-blood/cards": "^2.0.34",
     "@flesh-and-blood/types": "^2.0.6",
+    "@radix-ui/themes": "^2.0.3",
     "fab-cards": "^8.0.147",
     "next": "14.0.4",
     "react": "^18",

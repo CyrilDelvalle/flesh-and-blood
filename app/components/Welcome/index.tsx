@@ -14,18 +14,10 @@ const Welcome = () => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value)
     }
-
-    // Fetch API (optional)
     useEffect(() => {
-
         if (debouncedValue.length > 2)
             setFabCards(initialFabCards.filter(fabCards => fabCards.name.toLowerCase().includes(debouncedValue)))
-
-        // Do fetch here...
-        // Triggers when "debouncedValue" changes
     }, [debouncedValue, initialFabCards])
-
-    console.log(fabCards)
 
     return (
         <div>
@@ -37,8 +29,8 @@ const Welcome = () => {
             </div>
             <div>
                 {
-                    fabCards.map(({ cardIdentifier, defaultImage }) => {
-                        return <CardComponent key={cardIdentifier} width={150} height={200} cardIdentifier={cardIdentifier} imageCode={defaultImage.split('.')[0]} />
+                    fabCards.map(({ cardIdentifier, defaultImage, name }) => {
+                        return <CardComponent key={cardIdentifier} width={150} height={200} cardIdentifier={cardIdentifier} name={name} imageCode={defaultImage.split('.')[0]} />
                     })
                 }
             </div>
