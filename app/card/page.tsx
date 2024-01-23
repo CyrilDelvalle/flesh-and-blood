@@ -5,7 +5,4 @@ type Props = PropsWithChildren & {
 }
 
 export default function Pages(props: Props) {
-    const pathname = props.params;
-
-    console.log({ pathname })
 }
