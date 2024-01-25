@@ -1,20 +1,12 @@
 'use client'
 
 import { Box, Card, Flex, Heading, Text, } from '@radix-ui/themes'
+import { Card as Fabcard } from 'fab-cards';
 import { IconContext } from "react-icons";
 import { FaBookReader } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 
-type Props = {
-    name: string;
-    typeText: string;
-    functionalText: string;
-    intellect?: number;
-    life?: number;
-}
-
-
-const CardDescription = ({ name, typeText, functionalText, intellect, life }: Props) => {
+const CardDescription = ({ name, typeText, functionalText, intellect, life }: Partial<Fabcard>) => {
     return (
         <Card style={{ height: '100%' }}>
             <Flex gap="3" align="center">

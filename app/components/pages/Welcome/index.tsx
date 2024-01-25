@@ -1,11 +1,11 @@
 'use client'
 
 import { Card, cards } from "fab-cards"
-import CardComponent from '../CardComponent'
+import CardComponent from '../../organisms/CardComponent'
 import { ChangeEvent, useEffect, useState } from "react";
 import { useDebounce } from "@/app/hooks/useDebounce";
 import { Flex, Heading, Text } from "@radix-ui/themes";
-import SearchBar from "../SearchBar";
+import SearchBar from "../../molecules/SearchBar";
 
 const Welcome = () => {
     const [value, setValue] = useState<string>('')
@@ -29,8 +29,19 @@ const Welcome = () => {
             <SearchBar handleChange={handleChange} />
             <Flex wrap='wrap' justify='center'>
                 {
-                    fabCards?.map(({ cardIdentifier, defaultImage, name, typeText }) => {
-                        return <CardComponent key={cardIdentifier} width={300} height={400} cardIdentifier={cardIdentifier} name={name} typeText={typeText} imageCode={defaultImage.split('.')[0]} />
+                    fabCards?.map(({ hero, types, cardIdentifier, defaultImage, name, typeText }) => {
+                        return <CardComponent
+                            key={cardIdentifier}
+                            width={300}
+                            height={400}
+                            cardIdentifier={cardIdentifier}
+                            name={name}
+                            typeText={typeText}
+                            imageCode={defaultImage.split('.')[0]}
+                            hero={hero}
+                            types={types}
+
+                        />
                     })
                 }
             </Flex>

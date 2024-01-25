@@ -1,6 +1,6 @@
 import { Box } from '@radix-ui/themes'
 import { Card } from 'fab-cards'
-import CardComponent from '../CardComponent';
+import CardComponent from '../../organisms/CardComponent';
 
 type Props = {
     cards: Card[];

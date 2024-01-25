@@ -2,9 +2,9 @@ import React from 'react'
 import { Card as FabCard } from "fab-cards"
 import Image from 'next/image'
 import { Box, Flex } from '@radix-ui/themes'
-import CardDescription from '../CardDescription'
+import CardDescription from '../../organisms/CardDescription'
 
-const CardPage = ({ name, cardIdentifier, functionalText, defaultImage, typeText }: FabCard) => {
+const Card = ({ name, cardIdentifier, functionalText, defaultImage, typeText }: FabCard) => {
     const WIDTH = 600;
     const HEIGHT = 800;
 
@@ -22,4 +22,4 @@ const CardPage = ({ name, cardIdentifier, functionalText, defaultImage, typeText
     )
 }
 
-export default CardPage
+export default Card

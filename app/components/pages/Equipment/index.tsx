@@ -1,12 +1,12 @@
 import { cards, Card as FabCard } from "fab-cards"
-import CardComponent from '../CardComponent'
+import CardComponent from '../../organisms/CardComponent'
 
 import { Box, Flex, Text, } from '@radix-ui/themes'
 
-import CardDescription from '../CardDescription'
-import Cards from '../Cards'
+import CardDescription from '../../organisms/CardDescription'
+import Cards from '../../molecules/Cards'
 
-const EquipmentPage = ({ name, cardIdentifier, functionalText, defaultImage, typeText, keywords, classes }: FabCard) => {
+const Equipment = ({ name, cardIdentifier, functionalText, defaultImage, typeText, keywords, classes }: FabCard) => {
     const heroesList = cards.filter(card => card.classes.includes(classes[0]) && card.hero);
 
     return (
@@ -21,4 +21,4 @@ const EquipmentPage = ({ name, cardIdentifier, functionalText, defaultImage, typ
     )
 }
 
-export default EquipmentPage
+export default Equipment

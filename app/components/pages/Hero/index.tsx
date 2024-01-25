@@ -1,13 +1,14 @@
 import React from 'react'
 import { Card, Type, Class, cards } from "fab-cards"
 import { Box, Flex, Text, } from '@radix-ui/themes'
-import CardDescription from '../CardDescription'
-import Cards from '../Cards'
+import CardDescription from '../../organisms/CardDescription'
+import Cards from '../../molecules/Cards'
 import Image from 'next/image'
 
-const HeroPage = ({ name, typeText, cardIdentifier, functionalText, defaultImage, classes, intellect, life }: Card) => {
+const Hero = (card: Card) => {
     const WIDTH = 525;
     const HEIGHT = 700;
+    const { name, typeText, cardIdentifier, functionalText, defaultImage, classes, intellect, life } = card;
     const equipmentList = cards.filter(card => card.types[0] === Type.Equipment && card.classes[0] === classes[0]);
     const genericEquipmentList = cards.filter(card => card.types[0] === Type.Equipment && card.classes[0] === Class.Generic);
     const sortedEquipments = [...equipmentList, ...genericEquipmentList].sort((a: Card, b: Card) => a.subtypes[0].toLowerCase().localeCompare(b.subtypes[0].toLowerCase()))
@@ -32,4 +33,4 @@ const HeroPage = ({ name, typeText, cardIdentifier, functionalText, defaultImage
     )
 }
 
-export default HeroPage
+export default Hero
