@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 // import './globals.css'
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
+import Navigation from "./components/NavBar";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,8 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body style={{ margin: 0 }}>
         <Theme appearance='dark'>
+          <Navigation />
           {children}
         </Theme>
       </body>

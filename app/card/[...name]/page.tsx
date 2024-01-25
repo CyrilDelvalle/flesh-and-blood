@@ -10,6 +10,7 @@ type Props = PropsWithChildren & {
 }
 
 const DisplayCard = ({ card }: { card: Card }) => {
+    console.log({ card })
     if (card.hero)
         return <HeroPage {...card} />;
     if (card.types[0] === Type.Equipment)
@@ -23,7 +24,7 @@ export default function Pages({ params }: Props) {
     const card = cards.filter(card => card.cardIdentifier === cardIdentifier)[0];
 
     return (
-        <Flex direction="column" justify='between' align='center' style={{ minHeight: '100rem', padding: '6rem 8rem 0rem 8rem' }} >
+        <Flex direction="column" justify='between' align='center' style={{ padding: '11rem 10rem 0rem 10rem' }} >
             <DisplayCard card={card} />
         </Flex>
     )
